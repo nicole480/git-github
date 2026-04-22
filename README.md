@@ -65,3 +65,52 @@ pasen a ser parte del historial
 git commit -m "mensaje"
 - git reset --soft Head ~1 es para deshacer el ultimo commit(usarlo con precaución)
 
+##Buenas practicas
+###¿Cada cuanto debo hacer un commit?
+Aquí usaremos los commits atómicos. Son una práctica
+en Git donde cada confirmación (commit) representa un
+único cambio lógico, pequeño y completo en el código
+fuente.
+A menudo. Es mejor hacer commits pequeños, agrupando
+pequeñas mejoras o acciones, que un commit con todo lo
+que se quiere hacer.
+Hacer commit a menudo no significa que debas hacer
+commits sin sentido. Graba tus progresos en iteraciones
+pequeñas pero que tengan un significado y que, si puede
+ser,
+no deje tu aplicación o proyecto sin funcionar.
+##Escribe buenos commits
+n commit debe describir lo que hace en pocas palabras y de manera simple pero efectiva:
+1. Usa verbos imperativos (Add, Change, Fix, Remove)
+Add: Significa que se añade un nuevo archivo.
+Change: Significa que se modifica un archivo existente.
+Fix: Significa que se arregla un bug.
+Remove: Significa que se elimina un archivo existente.
+2. No uses punto final ni puntos suspensivos en tus mensajes
+Usar puntuación, más allá de las comas, es innecesario a la hora de crear un buen mensaje
+de commit. Cada carácter cuenta a la hora de describir un cambio, así que no lo
+desperdicies con puntos 
+git commit -m “Add new search feature.” MAL. No uses punto final
+git commit -m “Fix a problem with topbar..” MAL. No uses puntos suspensivos
+git commit -m “Change the default system color” BIEN
+. Usa como máximo 50 caracteres:
+Sé corto y conciso. Si tienes mucho que explicar es probable que tu commit contenga
+demasiados cambios. ¿Puedes separarlo en diferentes commits? Pues entonces hazlo.
+4. Usa un prefijo para tus commits para hacerlos más semánticos
+Para que el historial sea legible y se sepa mas facilmente lo que se hace se usa este tipo de
+commits:
+Escribe buenos commits
+git commit -m “<tipo de commit>: <descripción>”
+Por ejemplo:
+git commit -m “feat: Add new search feature”
+###Prefijos
+feat: para una nueva característica para el usuario.
+fix: para un bug que afecta al usuario.
+perf: para cambios que mejoran el rendimiento del sitio.
+build: para cambios en el sistema de build, tareas de despliegue o instalación.
+ci: para cambios en la integración continua.
+docs: para cambios en la documentación.
+refactor: para refactorización del código como cambios de nombre de variables o funciones.
+style: para cambios de formato, tabulaciones, espacios o puntos y coma, etc; no afectan al
+usuario.
+test: para tests o refactorización de uno ya existente.
