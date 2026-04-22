@@ -27,3 +27,41 @@ se escribe git --version en la terminal
 ##Archivos que todo repositorio deberia tener
 - README.md
 - .gitignore
+#Día 2-States y commits
+##Los estados de git
+###Directorio de trabajo(modificado)
+Tu carpeta local.Estás escribiendo código, pero Git aún no lo tiene "asegurado".
+###Stage Area(preparado)
+EL area de espera.Le dices a Git: "Esto es lo que quiero guardar".
+###Repositorio local(confirmado)
+El  historial.Tus cambios ya tienen un ID(hash) y son parte de la historia.
+![flujo de git] (captura.png)
+##Directorio de trabajo(modificado)
+Este es tu carpeta común, con la diferencia que GIT observa tus
+archivos, y los cataloga en:
+Untracked: Es decir sin seguimiento, que lo ve pero no tiene una
+version antigua de este archivo, sucede cuando este es creado.
+Modified: Es cuando GIT ya tiene una version previa del archivo y lo
+modificaste, eliminaste o cambiaste de nombre.
+Cualquier archivo que no este en el .gitignore pasa automaticamente a
+uno de estos estados dependiendo que hayas hecho.
+ - El comando git log- oneline sirve para mostrar el commit resumido
+  -EL comando git restore <archivo>, sirve para volver el archivo a su estado original,
+  Esto borra fisicamente lo que escribimos
+  - Si queremos que el archivo que creamos git lo ignore, creamos el archivo .gitignore 
+y dentro escribimos los nombres de los archivos a ignorar
+##Stage area(Preparado)
+Permite seleccionar qué archivos modificados se incluirán en el siguiente commit(guardado)
+y cuáles no.
+Para traer un archivo al stage area se debe realizar lo siguiente:
+-git add<archivo>: Agrega el archivo <archivo>, lo hace uno por uno
+- git add. agrega todos los archivos observados por git
+Si quieres sacar un archivo del stage area para volver al estado anterior:
+git restore --staged <archivo>
+##Repositorio Local(confirmado)
+Esta es la ultima fase, aqui es donde le decimos al repositorio que cree
+el punto de guardado para que todos los cambios que estan en staged
+pasen a ser parte del historial
+git commit -m "mensaje"
+- git reset --soft Head ~1 es para deshacer el ultimo commit(usarlo con precaución)
+
