@@ -1,52 +1,10 @@
-ano 7.2                             README.md                                       
-Hacer commit a menudo no significa que debas hacer
-commits sin sentido. Graba tus progresos en iteraciones
-pequeñas pero que tengan un significado y que, si puede
-ser,
-no deje tu aplicación o proyecto sin funcionar.
-##Escribe buenos commits
-n commit debe describir lo que hace en pocas palabras y de manera simple pero efectiva:
-1. Usa verbos imperativos (Add, Change, Fix, Remove)
-Add: Significa que se añade un nuevo archivo.
-Change: Significa que se modifica un archivo existente.
-Fix: Significa que se arregla un bug.
-Remove: Significa que se elimina un archivo existente.
-2. No uses punto final ni puntos suspensivos en tus mensajes
-Usar puntuación, más allá de las comas, es innecesario a la hora de crear un buen mensaje
-de commit. Cada carácter cuenta a la hora de describir un cambio, así que no lo
-desperdicies con puntos
-git commit -m “Add new search feature.” MAL. No uses punto final
-git commit -m “Fix a problem with topbar..” MAL. No uses puntos suspensivos
-git commit -m “Change the default system color” BIEN
-. Usa como máximo 50 caracteres:
-Sé corto y conciso. Si tienes mucho que explicar es probable que tu commit contenga
-demasiados cambios. ¿Puedes separarlo en diferentes commits? Pues entonces hazlo.
-4. Usa un prefijo para tus commits para hacerlos más semánticos
-Para que el historial sea legible y se sepa mas facilmente lo que se hace se usa este tipo>
-commits:
-Escribe buenos commits
-git commit -m “<tipo de commit>: <descripción>”
-Por ejemplo:
-git commit -m “feat: Add new search feature”
-###Prefijos
-feat: para una nueva característica para el usuario.
-fix: para un bug que afecta al usuario.
-perf: para cambios que mejoran el rendimiento del sitio.
-build: para cambios en el sistema de build, tareas de despliegue o instalación.
-ci: para cambios en la integración continua.
-docs: para cambios en la documentación.
-refactor: para refactorización del código como cambios de nombre de variables o funciones.
-style: para cambios de formato, tabulaciones, espacios o puntos y coma, etc; no afectan al
-usuario.
-test: para tests o refactorización de uno ya existente.
-
-#Dia 1
-##¿Qué es git?
+# Dia 1
+## ¿Qué es git?
 Git es un sistema de control de Versiones Distribuido(VCS), esto quiere decir
 que se puede trabajar en grupo.
 Nos permite guardar archivos y las versiones de estos a lo largo del tiempo
 de manera local
-##¿Cómo nació git?
+## ¿Cómo nació git?
 Git nació en 2005 cuando Linus Torvalds, creador del kernel de Linux,
  necesitó una nueva herramienta para gestionar los cambios en el código 
 del proyecto Linux. Antes utilizaban un sistema llamado BitKeeper,
@@ -58,27 +16,27 @@ del proyecto Linux. Antes utilizaban un sistema llamado BitKeeper,
  trabajaran al mismo tiempo. Así surgió Git, que con el paso de los años se
  convirtió en el sistema de control de versiones más utilizado en el mundo del
  desarrollo de software.
-##¿Cómo instalar git?
+## ¿Cómo instalar git?
 Para instalar git, se tiene que ir a la pagina web de git, y seguir los 
 pasos de instalacion recomendados y luego para verifivar la correcta instalacion
 se escribe git --version en la terminal
-##Configuraciones básicas
+## Configuraciones básicas
 - git config --global user.name "Tu nombre"
 - git config --global user.email "tu@correo.com"
 - git config --global core.autocrlf true
-##Archivos que todo repositorio deberia tener
+## Archivos que todo repositorio deberia tener
 - README.md
 - .gitignore
-#Día 2-States y commits
-##Los estados de git
-###Directorio de trabajo(modificado)
+# Día 2-States y commits
+## Los estados de git
+### Directorio de trabajo(modificado)
 Tu carpeta local.Estás escribiendo código, pero Git aún no lo tiene "asegurado".
-###Stage Area(preparado)
+### Stage Area(preparado)
 EL area de espera.Le dices a Git: "Esto es lo que quiero guardar".
-###Repositorio local(confirmado)
+### Repositorio local(confirmado)
 El  historial.Tus cambios ya tienen un ID(hash) y son parte de la historia.
 ![flujo de git] (captura.png)
-##Directorio de trabajo(modificado)
+## Directorio de trabajo(modificado)
 Este es tu carpeta común, con la diferencia que GIT observa tus
 archivos, y los cataloga en:
 Untracked: Es decir sin seguimiento, que lo ve pero no tiene una
@@ -92,7 +50,7 @@ uno de estos estados dependiendo que hayas hecho.
   Esto borra fisicamente lo que escribimos
   - Si queremos que el archivo que creamos git lo ignore, creamos el archivo .gitignore 
 y dentro escribimos los nombres de los archivos a ignorar
-##Stage area(Preparado)
+## Stage area(Preparado)
 Permite seleccionar qué archivos modificados se incluirán en el siguiente commit(guardado)
 y cuáles no.
 Para traer un archivo al stage area se debe realizar lo siguiente:
@@ -100,15 +58,15 @@ Para traer un archivo al stage area se debe realizar lo siguiente:
 - git add. agrega todos los archivos observados por git
 Si quieres sacar un archivo del stage area para volver al estado anterior:
 git restore --staged <archivo>
-##Repositorio Local(confirmado)
+## Repositorio Local(confirmado)
 Esta es la ultima fase, aqui es donde le decimos al repositorio que cree
 el punto de guardado para que todos los cambios que estan en staged
 pasen a ser parte del historial
 git commit -m "mensaje"
 - git reset --soft Head ~1 es para deshacer el ultimo commit(usarlo con precaución)
 
-##Buenas practicas
-###¿Cada cuanto debo hacer un commit?
+## Buenas practicas
+### ¿Cada cuanto debo hacer un commit?
 Aquí usaremos los commits atómicos. Son una práctica
 en Git donde cada confirmación (commit) representa un
 único cambio lógico, pequeño y completo en el código
@@ -122,7 +80,7 @@ pequeñas pero que tengan un significado y que, si puede
 ser,
 no deje tu aplicación o proyecto sin funcionar.
 ##Escribe buenos commits
-n commit debe describir lo que hace en pocas palabras y de manera simple pero efectiva:
+Un commit debe describir lo que hace en pocas palabras y de manera simple pero efectiva:
 1. Usa verbos imperativos (Add, Change, Fix, Remove)
 Add: Significa que se añade un nuevo archivo.
 Change: Significa que se modifica un archivo existente.
@@ -145,7 +103,7 @@ Escribe buenos commits
 git commit -m “<tipo de commit>: <descripción>”
 Por ejemplo:
 git commit -m “feat: Add new search feature”
-###Prefijos
+### Prefijos
 feat: para una nueva característica para el usuario.
 fix: para un bug que afecta al usuario.
 perf: para cambios que mejoran el rendimiento del sitio.
@@ -156,7 +114,7 @@ refactor: para refactorización del código como cambios de nombre de variables 
 style: para cambios de formato, tabulaciones, espacios o puntos y coma, etc; no afectan al
 usuario.
 test: para tests o refactorización de uno ya existente.
-#Día 3
+# Día 3
 ## Git remote
 git remote es el comando que nos permite gestionar nuestras conexiones con los repositorios
 remotos, le dice a GIT local donde enviar o de donde traer la informacion, algunos comandos
@@ -202,7 +160,7 @@ lo mismo que en las globales pero sin el flag --global:
 
 git config user.name "Mi nuevo Name"
 git config user.email "micorreo@gmail.com"
-##Git Checkout
+## Git Checkout
 Es el comando que nos permite desplazar el HEAD
 (nuestro puntero o "lector" actual) hacia un punto
 específico de la historia o a una rama distinta.
