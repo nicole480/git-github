@@ -196,3 +196,29 @@ salvo que hagas:
 git checkout <hash_commit_creado>
 git checkout -b rama_nueva
 
+# ⚙️ Jerarquía de Configuración de Git (Git Config Hierarchy)
+
+## 🧠 ¿Qué es la jerarquía de configuración de Git?
+
+La **jerarquía de configuración de Git** define **dónde se guardan las configuraciones** y **cuál tiene prioridad** cuando existen varias configuraciones al mismo tiempo.
+
+Git utiliza **tres niveles de configuración**, cada uno con un alcance diferente:
+
+1. 🖥️ System (Sistema)  
+2. 👤 Global (Usuario)  
+3. 📁 Local (Repositorio)  
+
+Cada nivel puede **sobrescribir** la configuración del nivel anterior.
+
+---
+
+# 🖥️ Nivel System (Sistema)
+
+## 📌 Descripción
+
+El **nivel System** afecta **a todos los usuarios** del sistema operativo.
+
+Este nivel normalmente es configurado por **administradores del sistema**.
+
+
+![configuration](Screen-Shot-2023-01-04-at-1.55.47-PM.png) 
