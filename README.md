@@ -276,4 +276,17 @@ Feature
 Se crean desde: develop
 Se usan para: 
 Desarrollar nuevas funciones
+release
+Cuando preparas el lanzamiento de una nueva
+versión. Es en teoria donde se hacen pruebas (QA).
+Se crean en develop y se fusionan en develop o main
 
+Hotflix
+
+Para trabajar en cambios imprevistos como parches
+para arreglar un bug o un problema en producción
+Por eso, al crear una rama hotfix se debe hacer
+desde la rama main ya que no se podría crear una
+solución desde la rama develop ya que contiene
+cambios que pueden ser inestables todavía.
+Nacen de main y se fusionan con main o develop
