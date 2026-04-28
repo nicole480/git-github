@@ -222,3 +222,58 @@ Este nivel normalmente es configurado por **administradores del sistema**.
 
 
 ![configuration](Screen-Shot-2023-01-04-at-1.55.47-PM.png) 
+# Dia 4
+## ¿Qué es una rama en Git?
+Una rama en Git es una línea independiente de desarrollo dentro de un proyecto
+Permite trabajar en nuevas funcionalidades sin afectar
+la versión principal del código
+La rama principal suele llamarse Main
+## ¿Para que sirven las ramas?
+
+Las ramas permiten:
+
+- Trabajar en nuevas funciones sin romper el programa principal
+- Corregir errores sin afectar el código estable
+- Permitir que varias personas trabajen al mismo tiempo
+- Probar cambios antes de integrarlos al proyecto principal
+## Comandos básicos para trabajar con ramas
+### Ver ramas existentes
+git branch
+Muestra todas las ramas locales
+### Crear una nueva rama
+git branch nombre-rama
+Crea la rama, pero no cambia a ella,¿.
+### Cambiar de rama(checkout)
+git checkout nombre-rama
+### Crear y cambiar de rama en un solo comando
+git checkout -b nombre-rama
+### Nuevo comando moderno(switch)
+git switch nombre-rama
+Crear y cambiar 
+git switch -c nueva-rama
+### Eliminar una rama
+git brach -d nombre-rama
+## ¿Qué es gitflow?
+Gitflow es un modelo de trabajo con ramas que define
+cómo organizar el desarrollo de un proyecto
+Sirve para:
+- Organizar el trabajo en equipo
+- Mantener el código ordenado
+- Controlar versiones del software
+## Estructuras de Gitflow
+### Ramas principales
+Main 
+Contiene:
+- Código listo para producción
+- Versiones finales
+Develop
+Contiene:
+
+- Código en desarrollo
+- Integración de nuevas funciones
+### Ramas auxiliares
+Feature
+Se crean desde: develop
+Se usan para: 
+Desarrollar nuevas funciones
+
