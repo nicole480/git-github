@@ -290,3 +290,38 @@ desde la rama main ya que no se podría crear una
 solución desde la rama develop ya que contiene
 cambios que pueden ser inestables todavía.
 Nacen de main y se fusionan con main o develop
+# Dia 5
+## ¿Qué es git merge?
+GIt merge nos permite fusionar nuestras ramas en una
+sola para que ambas tengan los commits hechos.
+Se agrega no ff, lo cual hace que al unir la rama, hagamos un commit
+para que no se pierda el historial de ramas,aun si  la borras.
+## ¿Qué es git fetch?
+Es un comando que consulta el repositorio remoto y descarga la información nueva, pero sin aplicarla a tu rama actual.
+Te permite ver qué cambió antes de decidir integrarlo.
+## ¿Qué es git pull?
+Es el comando que obtiene los cambios del repositorio remoto y los integra automáticamente en tu rama actual.
+En esencia, combina fetch + merge.
+## ¿Qué es git push?
+Es el comando que envía tus commits locales al repositorio remoto, actualizando la rama correspondiente.
+
+El flag -u se usa la primera vez para establecer una relación entre tu rama local y la remota, evitando tener que especificarla en el futuro.
+## Flujo de trabajo
+Te posicionas en develop y la actualizas
+ Garantizas que trabajas sobre la versión más reciente.
+Cambias a tu rama (o la creas)
+ Aíslas tu trabajo del resto del equipo.
+Si develop cambió, integras esos cambios en tu rama
+ Evitas conflictos después.
+Realizas tus cambios y los subes
+ Compartes tu progreso en el remoto.
+Vuelves a develop y la actualizas otra vez
+ Te aseguras de no sobrescribir cambios recientes.
+Fusionas tu rama en develop usando --no-ff
+ Dejas registro explícito de la integración.
+Si hay conflictos, los resuelves manualmente y confirmas
+ Defines qué versión del código se mantiene.
+Eliminas tu rama
+ Limpias el entorno de trabajo.
+Subes develop actualizado al repositorio remoto
+ El equipo obtiene los cambios finales.
