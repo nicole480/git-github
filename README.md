@@ -117,7 +117,88 @@ refactor: para refactorización del código como cambios de nombre de variables 
 style: para cambios de formato, tabulaciones, espacios o puntos y coma, etc; no afectan al
 usuario.
 test: para tests o refactorización de uno ya existente.
-# 
+# Día 3
+
+## GitHub
+
+## ¿Qué es GitHub?
+
+GitHub es una plataforma en la nube y red social para desarrolladores que permite alojar, gestionar y colaborar en proyectos de software utilizando Git.
+
+---
+
+## Git vs GitHub
+
+- **Git**: Sistema de control de versiones que crea “puntos de guardado” (commits).
+- **GitHub**: Plataforma donde se almacenan y comparten esos repositorios.
+
+Git usa GitHub, pero no son lo mismo.
+
+---
+
+## SSH vs HTTPS
+
+### HTTPS
+- Al clonar o hacer push, pide autenticación constantemente.
+- Puede requerir token.
+- Es más molesto en el uso diario.
+
+### SSH
+- Usa una clave (key) para autenticar tu PC.
+- No pide contraseña cada vez.
+- Es más cómodo y recomendado.
+
+Recomendación: usar SSH siempre que sea posible.
+
+---
+
+## Configuración SSH
+
+En Linux o Git Bash (Windows):
+
+ssh-keygen -t ed25519 -C "tu-correo@email.com"
+## Crear un repositorio en Github
+1.Vas a tu apartado de repositorios
+en https://github.com/Tu-user?
+tab=repositories y Click en “New”
+2.Pones el nombre de tu repositorio,
+y si quieres una descripción. Y
+luego click en “Create Repository” 
+##Conectar un repositorio local de Git existente con uno en Github
+git remote add origin git@github.com:TuUser/TuRepo.git
+/*Remote es la URL que apunta al servidor externo es decir a
+tu repositorio externo creado en Github y Origin es
+simplemente el apodo(nickname) que git le da por defecto a esa
+URL*/
+
+git branch -M main
+
+git push -u origin main
+
+NOTA: PARA ESTO YA TIENES QUE HABER INICIALIZADO EL REPO LOCAL
+(git init) Y TENER UN COMMIT INICIAL AL MENOS (git add . + git
+commit -m “Initial commit”)
+## Clonar un repositorio de GIT
+Para ello haces el comando:
+git clone “git@github.com:TuUser/TuRepo.git”
+
+Si por accidente lo hiciste con HTTPS:
+git clone “https://github.com/TuUser/TuRepo.git”
+
+Usa este comando para cambiar el puntero de github y no te
+pida autenticación cada vez:
+git remote set-url origin “git@github.com:TuUser/TuRepo.git”
+/*Este comando también se usa si quieres cambiar el
+repositorio remoto al cual esta conectado el repo*/
+
+Si quieres ver a que repositorio remoto esta conectado tu
+repo:
+git remote -v
+## Cambios 
+### Subir mis cambios
+git push origin <rama>
+### Bajar los cambios
+git pull origin <rama> 
 
 # Día 4
 ## Git remote
@@ -227,7 +308,7 @@ Este nivel normalmente es configurado por **administradores del sistema**.
 
 
 ![configuration](Screen-Shot-2023-01-04-at-1.55.47-PM.png) 
-# Dia 4
+# Dia 5
 ## ¿Qué es una rama en Git?
 Una rama en Git es una línea independiente de desarrollo dentro de un proyecto
 Permite trabajar en nuevas funcionalidades sin afectar
@@ -295,7 +376,7 @@ desde la rama main ya que no se podría crear una
 solución desde la rama develop ya que contiene
 cambios que pueden ser inestables todavía.
 Nacen de main y se fusionan con main o develop
-# Dia 5
+# Dia 6
 ## ¿Qué es git merge?
 GIt merge nos permite fusionar nuestras ramas en una
 sola para que ambas tengan los commits hechos.
@@ -330,7 +411,7 @@ Eliminas tu rama
  Limpias el entorno de trabajo.
 Subes develop actualizado al repositorio remoto
  El equipo obtiene los cambios finales.
-# Dia 6
+# Dia 7
 ## ¿Qué son los pull request?
 - Un Pull Request (PR) es una solicitud que haces en GitHub para proponer cambios en el código
  del proyecto.
@@ -368,7 +449,6 @@ Si todo esta bien:
 git checkout develop
 git fetch
 git pull origin develop
-
  Te aseguras de tener la última versión del proyecto
 2. Crear o usar tu rama
 git checkout rama
