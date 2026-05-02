@@ -10,7 +10,8 @@ Git nació en 2005 cuando Linus Torvalds, creador del kernel de Linux,
 del proyecto Linux. Antes utilizaban un sistema llamado BitKeeper,
  que era un software propietario que les permitía trabajar gratis,
  pero tras un conflicto con la empresa que lo desarrollaba,
- dejaron de tener acceso a él. Como solución,
+ dejaron de tener acceso a él.
+ Como solución,
  Linus decidió crear su propio sistema de control de versiones desde cero,
  diseñado para ser rápido, seguro y permitir que muchos desarrolladores
  trabajaran al mismo tiempo. Así surgió Git, que con el paso de los años se
@@ -19,7 +20,7 @@ del proyecto Linux. Antes utilizaban un sistema llamado BitKeeper,
 ## ¿Cómo instalar git?
 Para instalar git, se tiene que ir a la pagina web de git, y seguir los 
 pasos de instalacion recomendados y luego para verifivar la correcta instalacion
-se escribe git --version en la terminal
+se escribe **git --version** en la terminal
 ## Configuraciones básicas
 - git config --global user.name "Tu nombre"
 - git config --global user.email "tu@correo.com"
@@ -39,14 +40,16 @@ El  historial.Tus cambios ya tienen un ID(hash) y son parte de la historia.
 ## Directorio de trabajo(modificado)
 Este es tu carpeta común, con la diferencia que GIT observa tus
 archivos, y los cataloga en:
-Untracked: Es decir sin seguimiento, que lo ve pero no tiene una
+### Untracked 
+Es decir sin seguimiento, que lo ve pero no tiene una
 version antigua de este archivo, sucede cuando este es creado.
-Modified: Es cuando GIT ya tiene una version previa del archivo y lo
+### Modified 
+Es cuando GIT ya tiene una version previa del archivo y lo
 modificaste, eliminaste o cambiaste de nombre.
 Cualquier archivo que no este en el .gitignore pasa automaticamente a
 uno de estos estados dependiendo que hayas hecho.
- - El comando git log- oneline sirve para mostrar el commit resumido
-  -EL comando git restore <archivo>, sirve para volver el archivo a su estado original,
+ - El comando **git log -- oneline** sirve para mostrar el commit resumido
+  -EL comando **git restore <archivo>**, sirve para volver el archivo a su estado original,
   Esto borra fisicamente lo que escribimos
   - Si queremos que el archivo que creamos git lo ignore, creamos el archivo .gitignore 
 y dentro escribimos los nombres de los archivos a ignorar
@@ -57,13 +60,13 @@ Para traer un archivo al stage area se debe realizar lo siguiente:
 -git add<archivo>: Agrega el archivo <archivo>, lo hace uno por uno
 - git add. agrega todos los archivos observados por git
 Si quieres sacar un archivo del stage area para volver al estado anterior:
-git restore --staged <archivo>
+**git restore --staged <archivo>**
 ## Repositorio Local(confirmado)
 Esta es la ultima fase, aqui es donde le decimos al repositorio que cree
 el punto de guardado para que todos los cambios que estan en staged
 pasen a ser parte del historial
 git commit -m "mensaje"
-- git reset --soft Head ~1 es para deshacer el ultimo commit(usarlo con precaución)
+- **git reset --soft HEAD~1** es para deshacer el ultimo commit(usarlo con precaución)
 
 ## Buenas practicas
 ### ¿Cada cuanto debo hacer un commit?
@@ -114,7 +117,9 @@ refactor: para refactorización del código como cambios de nombre de variables 
 style: para cambios de formato, tabulaciones, espacios o puntos y coma, etc; no afectan al
 usuario.
 test: para tests o refactorización de uno ya existente.
-# Día 3
+# 
+
+# Día 4
 ## Git remote
 git remote es el comando que nos permite gestionar nuestras conexiones con los repositorios
 remotos, le dice a GIT local donde enviar o de donde traer la informacion, algunos comandos
@@ -272,16 +277,16 @@ Contiene:
 - Código en desarrollo
 - Integración de nuevas funciones
 ### Ramas auxiliares
-Feature
+**Feature**
 Se crean desde: develop
 Se usan para: 
 Desarrollar nuevas funciones
-release
+**release**
 Cuando preparas el lanzamiento de una nueva
 versión. Es en teoria donde se hacen pruebas (QA).
 Se crean en develop y se fusionan en develop o main
 
-Hotflix
+**Hotfix**
 
 Para trabajar en cambios imprevistos como parches
 para arreglar un bug o un problema en producción
@@ -325,3 +330,90 @@ Eliminas tu rama
  Limpias el entorno de trabajo.
 Subes develop actualizado al repositorio remoto
  El equipo obtiene los cambios finales.
+# Dia 6
+## ¿Qué son los pull request?
+- Un Pull Request (PR) es una solicitud que haces en GitHub para proponer cambios en el código
+ del proyecto.
+## ¿Qué incluye un Pr?
+- Cuando creas un PR, GitHub muestra:
+
+Los cambios que hiciste (línea por línea)
+Los archivos modificados
+Los commits que agregaste
+Comentarios del equipo
+Revisiones (approve / request changes)
+## ¿Cómo crear un Pull Request?
+ 1. Subir tu rama
+  - git push origin feature/navbar
+ 2. Ir a Github
+ - Entras al repositorio
+GitHub te mostrará un botón:
+ “Compare & pull request”
+3. Crear el PR
+Seleccionas:
+base: develop
+compare: feature/navbar
+Agregas título y descripción
+Clic en Create Pull Request
+4. Revision 
+El equipo puede:
+
+✅ Aprobar (Approve)
+❌ Pedir cambios (Request changes)
+💬 Comentar
+ 5. Merge
+Si todo esta bien:
+## Flujo de trabajo con PRs
+1. Actualizar develop
+git checkout develop
+git fetch
+git pull origin develop
+
+ Te aseguras de tener la última versión del proyecto
+2. Crear o usar tu rama
+git checkout rama
+3. Sincronizar con develop
+ git merge develop
+4. Trabajas Normalmente
+- Editas código
+- Haces commits
+5. Subir tu trabajo
+- git push origin rama
+## ¿Porque usar Pull Request?
+### Problemas sin usar PRs
+Cualquier persona puede romper el código sin darse cuenta
+No hay revisión previa de los cambios
+Se puede subir código incorrecto o incompleto
+Falta de control sobre lo que se integra
+Se dificulta el trabajo en equipo
+## Ventajas de usar PRs
+1. Revisión de código
+
+Permite que otros revisen tu trabajo antes de aceptarlo.
+
+2. Seguridad
+
+Evita que alguien integre cambios sin aprobación.
+
+3. Trabajo en equipo
+
+Facilita la discusión y mejora de los cambios.
+
+4. Historial claro
+
+Permite ver quién hizo qué cambios y por qué.
+
+5. Prevención de errores
+
+Ayuda a detectar errores antes de integrar el código.
+## ¿Cómo proteger el repositorio?
+Incluso usando PRs, alguien podría hacer cambios directos si no hay restricciones.
+
+Para evitar esto, se utilizan reglas de protección de ramas en GitHub.
+### Branch protection rules
+Se pueden configurar las siguientes reglas:
+
+No permitir push directo a main o develop
+Requerir aprobación antes de hacer merge
+Obligar el uso de Pull Requests
+
